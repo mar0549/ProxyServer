@@ -1,0 +1,33 @@
+These programs are to be used on the UNT cse machines to run properly.
+pserver.c must be ran on the cse01 server, while client.c must be ran on the cse02 server
+
+
+To use the proxy server, follow these steps for compiling and running pserver.c
+
+compile using... gcc -o pserver pserver.c
+
+run the program with... ./pserver <port_number>
+	you may use a port nubmer of your choosing.
+	The program will not execute without being precisely in this format
+
+The proxy will be in an infinite loop while waiting for client requests, unless there is an error within the http request
+
+
+To send HTTP requests to the porxy, follow these steps for compiling and running client.c
+client.c must be ran while the pserver.c code is already running
+
+compile using... gcc -o client client.c
+
+run the program with... ./client <port_number>
+	you may use a port number of your choosing.
+	This program will not execute without being precisely in this format
+
+The client will prompt for a url to be entered with a "URL:" statement
+
+Enter the desired url and press enter
+
+The http request will be sent to the proxy and forwarded to the web server
+
+The proxy will then forward the web server response, and the client will print out the response
+
+To run another HTTP request, the client must be ran again with the same port number
